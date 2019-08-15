@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: a0f8226fa3607994280433792fede787
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - v_PuloAudioClip: {instanceID: 0}
+  - v_TrampolimAudioClip: {instanceID: 0}
+  - v_AnelAudioClip: {instanceID: 0}
+  - v_VidaAudioClip: {instanceID: 0}
+  - v_FaseAudioClip: {instanceID: 0}
+  - v_ChaveAudioClip: {instanceID: 0}
+  - txt_vidas: {instanceID: 0}
+  - txt_aneis: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
