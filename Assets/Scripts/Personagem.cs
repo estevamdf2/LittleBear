@@ -35,7 +35,9 @@ public class Personagem : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        v_n_vidas = 3;
+        //v_n_vidas = 3;
+        v_n_aneis = 0;
+        v_n_chaves= 0;
         txt_aneis.text = v_n_aneis.ToString(); // converte váriavel (v_n_aneis) para texto
         txt_vidas.text = v_n_vidas.ToString(); // converte váriavel (v_n_vidas) para texto
         txt_chaves.text = v_n_chaves.ToString(); // converte váriavel (v_n_chaves) para texto
@@ -47,7 +49,7 @@ public class Personagem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) // Faz boneco saltar quando teclar espaço
         {
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 200)); // Adiciona força no salto do boneco
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300)); // Adiciona força no salto do boneco
         }
 
 
@@ -114,7 +116,7 @@ public class Personagem : MonoBehaviour
 
         if (v_colisao.gameObject.CompareTag("tag_trampolim")) // Verifica se colide com trampolim
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 6f);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 8f);
             GetComponent<AudioSource>().PlayOneShot(v_TrampolimAudioClip);
 
         }
@@ -157,6 +159,8 @@ public class Personagem : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(v_AnelAudioClip); // Toca o som de coleta do anel
             v_n_aneis++; // incrementa o valor de anéis
             txt_aneis.text = v_n_aneis.ToString(); // atualiza a caixa de texto aneis
+            Debug.Log("aneis");
+            Debug.Log(txt_aneis.text);  
         }
 		
 		if (v_colisao.gameObject.CompareTag("tag_chave")) 
@@ -169,6 +173,7 @@ public class Personagem : MonoBehaviour
 		
 		
 		// mudança de fase após colisão com seta (somente se tiver coletado 12 moedas e 1 chave)
+        //if (v_colisao.gameObject.CompareTag("tag_novafase") && v_n_aneis = 12 && v_n_chaves > 0)
 		if (v_colisao.gameObject.CompareTag("tag_novafase") && v_n_aneis > 0 && v_n_chaves > 0) // >11 >0
         {
 			GetComponent<AudioSource>().PlayOneShot(v_FaseAudioClip);
